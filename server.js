@@ -6,6 +6,7 @@ import authRoutes from "./routes/authRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -21,6 +22,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
 
 app.use("/api/dashboard", dashboardRoutes);
+
+
+app.use("/api/ai", aiRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
